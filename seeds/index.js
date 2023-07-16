@@ -1,6 +1,7 @@
 //CONNECTING TO MONGOOSE
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/YelpCamp')
+const dbUrl = process.env.DB_URL;
+mongoose.connect(dbUrl)
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error'));
 db.once('open', () => {
@@ -41,7 +42,7 @@ const seedDB = async () => {
             ],
             description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit et obcaecati praesentium illo, accusantium temporibus iusto aperiam aliquam? Autem id tempora dignissimos optio omnis quos atque odio corrupti eos aliquid.',
             price: price,
-            author: '63fd01c7688900005516dc4b'
+            author: '64a9908c2e36822a7f2ef0b8'
         });
         await camp.save();
     }
