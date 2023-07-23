@@ -39,7 +39,7 @@ app.use(express.static(path.join(__dirname, 'assets')));
 const MongoStore = require('connect-mongo');
 const session = require('express-session');
 const store = MongoStore.create({
-    mongoUrl: 'mongodb://localhost:27017/YelpCamp',
+    mongoUrl: 'mongodb://127.0.0.1:27017/YelpCamp',
     crypto: { secret: 'thisShouldBeABetterSecret' },
     touchAfter: 24 * 60 * 60
 });
