@@ -29,7 +29,7 @@ module.exports.signup = catchAsync(async (req, res, next) => {
 module.exports.renderLogin = (req, res) => {
     if(req.query.returnTo){
         req.flash('error', 'You have to be logged in first!');
-        res.locals.info = req.flash('info');
+        res.locals.error = req.flash('error');
         req.session.returnTo = req.query.returnTo;
     };
     res.render('users/login');
