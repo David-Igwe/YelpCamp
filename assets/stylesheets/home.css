@@ -43,3 +43,15 @@ body {
 .btn-light:hover{
     border-color: rgba(68, 68, 68, 0.5)!important;
 }
+
+@keyframes slideInBottom {
+    0% {
+      transform: translateY(50%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  main {
+    animation: 800ms ease-in-out 0s slideInBottom;
+  }
