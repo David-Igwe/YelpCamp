@@ -1,7 +1,7 @@
 body {
     height: 100vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("https://res.cloudinary.com/dmgrue5xh/image/upload/v1694602269/YelpCamp/ezgif.com-optimize_2_gtsvlg.gif");
+    url("https://res.cloudinary.com/dmgrue5xh/image/upload/v1694705204/YelpCamp/ezgif.com-optimize_1_ipdcih.gif");
     background-size: cover;
     background-position: center;
     text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
@@ -12,7 +12,7 @@ body {
 @media(orientation: portrait){
     body {
         background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url("https://res.cloudinary.com/dmgrue5xh/image/upload/v1694601276/YelpCamp/ezgif.com-optimize_1_ljrclb.gif");
+        url("https://res.cloudinary.com/dmgrue5xh/image/upload/v1694705195/YelpCamp/ezgif.com-optimize_itap7u.gif");
     }
 }
 
