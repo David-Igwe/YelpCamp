@@ -11,14 +11,13 @@ db.once('open', () => {
 //REQUIRING MODULES
 const Campground = require('../models/campground');
 const Cities = require('./cities');
+const images = require('./images');
 const Name = require('./seedHelpers');
 const { descriptors, places } = Name;
 
 //RANDOM ARRAY ITEM FUNCTION
 const randArr = (array) => Math.floor(Math.random() * array.length);
 
-//IMAGES
-const images = require('./images');
 
 
 //NEW DOCUMENTS

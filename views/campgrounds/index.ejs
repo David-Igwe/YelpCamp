@@ -1,36 +1,89 @@
 <% layout('layout/boilerplate') %>
 
-<div id="clusterMap"></div>
-<h1>All Campgrounds</h1>
-<ul>
-    <% for(let campground of campgrounds){ %>
-        <div class="card mb-3">
-            <div class="row">
-                <div class="col-md-4">
-                    <%if(campground.images.length) {%>
-                        <img class="img-fluid" alt="" src="<%=campground.images[0].url%>">
-                        <% }else {%>
-                        <img class="img-fluid" alt=""
-                            src="https://res.cloudinary.com/douqbebwk/image/upload/v1600103881/YelpCamp/lz8jjv2gyynjil7lswf4.png">
-                        <% } %>
+    <div id="clusterMap" class="d-none d-md-block"></div>
+
+    <div id="campgroundCarousel" class="carousel slide carousel-fade d-md-none" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#campgroundCarousel" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#campgroundCarousel" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#campgroundCarousel" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://res.cloudinary.com/dmgrue5xh/image/upload/q_20/v1698691292/YelpCamp/naassom-azevedo-AcWC8WuCQ_k-unsplash_o0fclz.jpg"
+                    class="d-block w-100" alt="...">
+                <div class="carousel-caption">
+                    <div class="h3">Get Outdoors</div>
                 </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <div class="card-title h4"><%= campground.name %></div>
-                        <p class="card-text"><%= campground.description %></p>
-                        <p class="card-text">
-                            <small class="text-muted"><%= campground.location %></small>
-                        </p>
-                        <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">View Campground</a>
-                    </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://res.cloudinary.com/dmgrue5xh/image/upload/q_20/v1698691288/YelpCamp/brian-yurasits-cAVUdHxLgIw-unsplash_igproq.jpg"
+                    class="d-block w-100" alt="...">
+                <div class="carousel-caption">
+                    <div class="h3">The best camps for the best prices</div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://res.cloudinary.com/dmgrue5xh/image/upload/q_20/v1698691285/YelpCamp/arthur-poulin-NhU0nUR7920-unsplash_cjd0or.jpg"
+                    class="d-block w-100" alt="...">
+                <div class="carousel-caption">
+                    <div class="h3">Relax, unwind and explore</div>
                 </div>
             </div>
         </div>
-    <% } %>
-</ul>
+        <button class="carousel-control-prev" type="button" data-bs-target="#campgroundCarousel"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#campgroundCarousel"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
 
-<script>
-    const mapToken = '<%- process.env.MAPBOX_TOKEN %>'
-    const campgrounds = {features: <%- JSON.stringify(campgrounds) %>}
-</script>
-<script src="/scripts/clusterMap.js"></script>
+    <div class="container">
+        <h1>All Campgrounds</h1>
+        <ul>
+            <% for(let campground of campgrounds){ %>
+                <div class="card mb-3">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <%if(campground.images.length) {%>
+                                <img class="img-fluid" alt="" src="<%=campground.images[0].url%>">
+                                <% }else {%>
+                                    <img class="img-fluid" alt=""
+                                        src="https://res.cloudinary.com/douqbebwk/image/upload/v1600103881/YelpCamp/lz8jjv2gyynjil7lswf4.png">
+                                    <% } %>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <div class="card-title h4">
+                                    <%= campground.name %>
+                                </div>
+                                <p class="card-text">
+                                    <%= campground.description %>
+                                </p>
+                                <p class="card-text">
+                                    <small class="text-muted">
+                                        <%= campground.location %>
+                                    </small>
+                                </p>
+                                <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">View Campground</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+        </ul>
+    </div>
+
+    <script>
+        const mapToken = '<%- process.env.MAPBOX_TOKEN %>'
+        const campgrounds = {features: <%- JSON.stringify(campgrounds) %>}
+    </script>
+    <script src="/scripts/clusterMap.js"></script>
