@@ -47,20 +47,18 @@
     </div>
 
     <div class="container">
-        <h1>All Campgrounds</h1>
-        <ul>
-            <% for(let campground of campgrounds){ %>
-                <div class="card mb-3">
-                    <div class="row">
-                        <div class="col-md-4">
+        <h1 class="text-center mt-4 mb-3 mt-lg-5 mb-lg-4">All Campgrounds</h1>
+        <ul class="ps-0">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+                <% for(let campground of campgrounds){ %>
+                    <div class="col">
+                        <div class="card mb-3">
                             <%if(campground.images.length) {%>
                                 <img class="img-fluid" alt="" src="<%=campground.images[0].url%>">
                                 <% }else {%>
                                     <img class="img-fluid" alt=""
                                         src="https://res.cloudinary.com/douqbebwk/image/upload/v1600103881/YelpCamp/lz8jjv2gyynjil7lswf4.png">
-                                    <% } %>
-                        </div>
-                        <div class="col-md-8">
+                            <% } %>
                             <div class="card-body">
                                 <div class="card-title h4">
                                     <%= campground.name %>
@@ -77,8 +75,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
                 <% } %>
+            </div>
         </ul>
     </div>
 
