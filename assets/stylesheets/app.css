@@ -4,6 +4,40 @@
 }
 
 #map{
-    width: 400px; 
-    height: 300px;
+    width: 33.33333333; 
+    height: 20rem;
+}
+
+body{
+    font-family: Barlow, sans-serif;
+}
+
+.navbar-toggler{
+    transition: 500ms ease-in-out;
+}
+
+.navbar-toggler,
+.navbar-toggler:focus,
+.navbar-toggler:active{
+    outline: none;
+    box-shadow: none;
+    border: 0;
+}
+
+.navbar-toggler.collapsed{
+    transform: rotate(180deg);
+}
+
+.overlay{
+    color: white;
+    position: fixed;
+    z-index: 1;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: inset 0 0 0 2000px rgba(0,0,0,0.5);
+    height: 5rem;
+}
+
+carousel{
+    height: 15.6rem;
 }
