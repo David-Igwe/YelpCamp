@@ -26,7 +26,7 @@ This project was built as a learning exercise to understand and implement variou
 
 - **Backend:** Node.js, Express.js
 - **Frontend:** HTML, CSS, EJS templates
-- **Database:** MongoDB, Mongoose
+- **Database:** MongoDB
 - **Authentication:** Passport.js
 - **Maps:** Mapbox API
 
